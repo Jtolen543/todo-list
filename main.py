@@ -29,19 +29,6 @@ def home():
     return render_template("index.html", lists=lists, date=date, todos=todos, current=current, manager=manager)
 
 
-# @app.route("/get_data", methods=["GET", "POST"])
-# def get_data():
-#     global manager  # Access the global manager variable
-#     if request.method == "POST":
-#         value = request.form.get("data")
-#         if value:
-#             manager = value
-#         else:
-#             json_data = request.get_json()
-#             manager = json_data.get("data") if json_data else None
-#     return redirect(url_for("home"))
-
-
 @app.route("/add_list", methods=["GET", "POST"])
 def add_list():
     if request.form.get("list"):
